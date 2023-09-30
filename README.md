@@ -16,8 +16,8 @@ Redirects Google DMCA-blocked searches to Yandex.
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/DMCA-Redirect.git
-   cd DMCA-Redirect
+   git clone https://github.com/DiegoFleitas/dmca-redirect.git
+   cd dmca-redirect
    ```
 
 2. Load the extension in Firefox:
