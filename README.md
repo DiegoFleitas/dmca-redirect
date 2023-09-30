@@ -6,6 +6,7 @@ Redirects Google DMCA-blocked searches to Yandex.
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [How This Works](#how-this-works)
 - [Development](#development)
 - [Testing](#testing)
 - [Contribute](#contribute)
@@ -29,6 +30,16 @@ Redirects Google DMCA-blocked searches to Yandex.
 2. If a DMCA notice is detected on the search result page, the extension icon will show a yellow badge.
 3. Click the extension icon to open a popup.
 4. Click the "Search on Yandex" button in the popup to perform the same search on Yandex.
+
+## How This Works
+
+The extension notifies & allows you to quickly performs the same Google searches that are affected by DMCA takedown notices to Yandex. The reason for this functionality is rooted in the different legal jurisdictions under which Google and Yandex operate, which may affect their compliance with DMCA takedown requests. Here's a brief explanation:
+
+1. **Different Jurisdictions**:
+    - Google, being a U.S.-based search engine, complies with DMCA takedown notices as per U.S. copyright law. On the other hand, Yandex is based in Russia, a jurisdiction known for not enforcing most copyright laws as stringently as the U.S. This legal distinction potentially allows Yandex to display search results that may have been blocked on Google due to DMCA requests.
+
+2. **Different Platforms**:
+    - Since Google and Yandex are different platforms, it's possible that the issuer of a DMCA takedown notice might have requested the removal of content from Google, but not from Yandex. This discrepancy could lead to the availability of certain content on Yandex that has been removed from Google due to DMCA notices.
 
 ## Development
 
