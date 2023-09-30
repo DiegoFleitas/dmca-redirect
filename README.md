@@ -9,7 +9,6 @@ Redirects Google DMCA-blocked searches to Yandex.
 - [Development](#development)
 - [Testing](#testing)
 - [Contribute](#contribute)
-- [License](#license)
 
 ## Installation
 
