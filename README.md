@@ -33,7 +33,7 @@ Redirects Google DMCA-blocked searches to Yandex.
 
 ## How This Works
 
-The extension notifies & allows you to quickly performs the same Google searches that are affected by DMCA takedown notices to Yandex. The reason for this functionality is rooted in the different legal jurisdictions under which Google and Yandex operate, which may affect their compliance with DMCA takedown requests. Here's a brief explanation:
+The extension notifies & allows you to quickly perform the same Google searches that are affected by DMCA takedown notices to Yandex. The reason for this functionality is rooted in the different legal jurisdictions under which Google and Yandex operate, which may affect their compliance with DMCA takedown requests. Here's a brief explanation:
 
 1. **Different Jurisdictions**:
     - Google, being a U.S.-based search engine, complies with DMCA takedown notices as per U.S. copyright law. On the other hand, Yandex is based in Russia, a jurisdiction known for not enforcing most copyright laws as stringently as the U.S. This legal distinction potentially allows Yandex to display search results that may have been blocked on Google due to DMCA requests.
