@@ -20,7 +20,7 @@ Redirects Google DMCA-blocked searches to Yandex.
    cd dmca-redirect
    ```
 
-2. Load the extension in Firefox:
+2. Zip & load the extension in Firefox:
    - Type `about:debugging` in the Firefox address bar and press Enter.
    - Click "This Firefox" > "Load Temporary Add-on" and select any file in the `DMCA-Redirect` directory.
 
@@ -35,7 +35,7 @@ Redirects Google DMCA-blocked searches to Yandex.
 
 ### Prerequisites
 
-- Firefox Developer Edition.
+- Firefox Browser.
 - Basic knowledge of HTML, CSS, and JavaScript.
 
 ### Structure
@@ -55,7 +55,3 @@ Follow the [Firefox Extension Workshop’s testing instructions](https://extensi
 ## Contribute
 
 Contributions are welcome! Feel free to open issues and submit pull requests.
-
-## License
-
-[MIT License](LICENSE)
