@@ -39,7 +39,7 @@ This extension is your buddy when Google searches hit a DMCA notice. It quickly 
     - Since Google and Yandex are separate platforms, the issuer of a DMCA takedown notice may have only targeted Google. This could lead to the availability of certain content on Yandex that's been removed from Google due to DMCA notices.
 
 2. **Different Jurisdictions**:
-    - Google, being a U.S.-based search engine, adheres to DMCA takedown notices under U.S. copyright law. Yandex, rooted in Russia, operates under a jurisdiction known for a more relaxed stance on copyright laws. This allows Yandex to display search results that might have been blocked on Google.
+    - Google, being a U.S.-based search engine, adheres to DMCA takedown notices under U.S. copyright law. Yandex, rooted in Russia, operates under a jurisdiction known for a more relaxed stance on copyright laws. This might allow Yandex to display search results that could have been blocked on Google.
 
 ## Development
 
