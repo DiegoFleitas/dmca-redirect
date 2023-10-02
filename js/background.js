@@ -3,7 +3,7 @@ console.log("Background script loaded.");
 
 let processedLumenUrls = new Set();
 
-// Listener for web requests
+// Listener for web requests. Might get triggered by scrolling
 chrome.webRequest.onCompleted.addListener(
   (details) => {
     // Inject a script into the tab to check for a DMCA notice
@@ -34,17 +34,20 @@ chrome.webRequest.onCompleted.addListener(
               allOffendingDomains.push(...offendingDomains);
               processedLumenUrls.add(lumenUrl); // Mark this URL as processed
             }
+
             // Save all offending domains to local storage
-            chrome.storage.local.set(
-              { offendingDomains: allOffendingDomains },
-              () => {
-                if (chrome.runtime.lastError) {
-                  console.error(chrome.runtime.lastError);
-                  return;
+            if (allOffendingDomains.length > 0) {
+              chrome.storage.local.set(
+                { offendingDomains: allOffendingDomains },
+                () => {
+                  if (chrome.runtime.lastError) {
+                    console.error(chrome.runtime.lastError);
+                    return;
+                  }
+                  console.log("Offending domains saved:", allOffendingDomains);
                 }
-                console.log("Offending domains saved:", allOffendingDomains);
-              }
-            );
+              );
+            }
           } catch (error) {
             console.error(
               "Error fetching or parsing Lumen Database pages:",
