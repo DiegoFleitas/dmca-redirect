@@ -31,6 +31,8 @@ Redirects Google DMCA-blocked searches to Yandex.
 3. Click the extension icon to open a popup.
 4. Click the "Search on Yandex" button in the popup to perform the same search on Yandex.
 
+![demo](https://github.com/DiegoFleitas/dmca-redirect/assets/15369935/7fb4bc46-a84a-46f9-8227-0967136695c1)
+
 ## How This Works
 
 This extension is your buddy when Google searches hit a DMCA notice. It quickly shuffles you over to Yandex to continue your search. Here’s the gist:
