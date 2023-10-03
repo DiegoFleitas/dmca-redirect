@@ -1,18 +1,23 @@
-document.getElementById("suggest").addEventListener("click", () => {
+document.addEventListener("DOMContentLoaded", () => {
   chrome.storage.local.get(["offendingDomains", "originalQuery"], (data) => {
     let { offendingDomains, originalQuery } = data;
+    let linksUl = document.getElementById("links");
     if (offendingDomains && offendingDomains.length > 0 && originalQuery) {
-      let query = `${originalQuery} `;
-      // just use first domain (yandex doesn't seem to support multiple domains nor OR operators along w the query)
-      // TODO: show alternatives in the popup in the future
-      query += `${
-        offendingDomains?.[0] ? "domain=" + offendingDomains[0] : ""
-      }`;
-      let yandexUrl =
-        "https://yandex.com/search/?text=" + encodeURIComponent(query);
-      chrome.tabs.create({ url: yandexUrl });
+      offendingDomains.forEach((domain) => {
+        let query = `${originalQuery} domain=${domain}`;
+        let yandexUrl =
+          "https://yandex.com/search/?text=" + encodeURIComponent(query);
+
+        let li = document.createElement("li");
+        let link = document.createElement("a");
+        link.href = yandexUrl;
+        link.textContent = `Retry search (${domain})`;
+        link.target = "_blank"; // Open link in a new tab
+        li.appendChild(link);
+        linksUl.appendChild(li); // Append the list item to the unordered list
+      });
     } else {
-      console.error("Data not found in storage", data);
+      linksUl.textContent = "No offending domains found";
     }
   });
 });
