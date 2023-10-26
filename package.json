@@ -1,6 +1,6 @@
 {
   "name": "dmca-redirect",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Redirects Google DMCA-blocked searches to Yandex.",
   "main": "background.js",
   "scripts": {
