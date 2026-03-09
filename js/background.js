@@ -1,7 +1,7 @@
 import { getOffendingDomains, getLumenUrls, extractQuery } from "./utils.js";
 console.log("Background script loaded.");
 
-let processedLumenUrls = new Set();
+const processedLumenUrls = new Set();
 
 // Listener for web requests. Might get triggered by scrolling
 chrome.webRequest.onCompleted.addListener(
@@ -23,14 +23,14 @@ chrome.webRequest.onCompleted.addListener(
           console.log("DMCA notice found, redirecting to Yandex");
           // Extract the Lumen Database URL and original query
           try {
-            let lumenUrls = await getLumenUrls(details.tabId);
-            let allOffendingDomains = [];
-            for (let lumenUrl of lumenUrls) {
+            const lumenUrls = await getLumenUrls(details.tabId);
+            const allOffendingDomains = [];
+            for (const lumenUrl of lumenUrls) {
               if (processedLumenUrls.has(lumenUrl)) {
                 console.log("Already processed:", lumenUrl);
                 continue; // Skip this URL if it's already been processed
               }
-              let offendingDomains = await getOffendingDomains(lumenUrl);
+              const offendingDomains = await getOffendingDomains(lumenUrl);
               allOffendingDomains.push(...offendingDomains);
               processedLumenUrls.add(lumenUrl); // Mark this URL as processed
             }
@@ -55,7 +55,7 @@ chrome.webRequest.onCompleted.addListener(
             );
           }
 
-          let originalQuery = extractQuery(details.url);
+          const originalQuery = extractQuery(details.url);
           chrome.storage.local.set({ originalQuery: originalQuery }, () => {
             if (chrome.runtime.lastError) {
               console.error(chrome.runtime.lastError);
