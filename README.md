@@ -67,3 +67,44 @@ Follow the [Firefox Extension Workshop’s testing instructions](https://extensi
 ## Contribute
 
 Contributions are welcome! Feel free to open issues and submit pull requests.
+
+## Browser Support & Manifest
+
+This extension is currently implemented as a **Manifest V2** WebExtension and is primarily tested in **Firefox**. Other browsers that support MV2-style WebExtensions may work, but are not officially supported.
+
+For future compatibility, a migration path to **Manifest V3** should be considered, especially for Chromium-based browsers where MV2 is being deprecated.
+
+## Privacy & Data Usage
+
+The extension:
+
+- Reads Google search result pages only to detect the presence of a DMCA notice and to locate links to the Lumen Database.
+- Fetches the corresponding Lumen pages to extract infringing URLs/domains.
+- Stores the following values in `chrome.storage.local`:
+  - `offendingDomains`: the list of domains extracted from Lumen DMCA entries.
+  - `originalQuery`: the original Google search query string.
+- Uses these values **only** to build Yandex search links in the popup UI.
+
+No data is sent to any server controlled by the extension author. Network requests go only to:
+
+- Google Search (as part of normal browsing),
+- Lumen Database pages linked from Google’s DMCA notices, and
+- Yandex Search for the alternative queries.
+
+For more details, see [PRIVACY.md](PRIVACY.md).
+
+## Security & Reporting Vulnerabilities
+
+If you believe you have found a security or privacy issue in this extension, please:
+
+1. Avoid opening a public issue with sensitive details.
+2. Report it privately via the contact information or issue tracker guidelines in [SECURITY.md](SECURITY.md).
+
+The `SECURITY.md` document also outlines what types of issues are in scope and expected response practices.
+
+## Contributing Guidelines & Code of Conduct
+
+Before contributing, please review:
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) for development workflow, coding standards, and testing instructions.
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for community expectations.
