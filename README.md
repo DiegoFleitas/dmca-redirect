@@ -74,6 +74,34 @@ This installs dependencies and runs the same scripts used in CI with pnpm.
 
 No build step is required. Just load the extension in Firefox and it's ready for testing and development.
 
+## Releases
+
+- Versioning: Git tags follow the pattern `vX.Y.Z` (for example, `v1.4.1`) and should match the `version` in both `manifest.json` and `package.json`.
+- Automated release build:
+  - Pushing a tag like `v1.4.1` triggers the `Release` GitHub Actions workflow.
+  - The workflow installs dependencies, runs lint and tests, then builds `dist/dmca-redirect.zip` via `pnpm run package`.
+  - That zip is attached as an asset to the GitHub Release for the same tag.
+- Publishing to Mozilla Add-ons (AMO):
+  - Download the `dmca-redirect.zip` asset from the corresponding GitHub Release.
+  - Upload that zip to the Firefox Add-ons dashboard for review/publishing.
+  - This keeps the GitHub release and the AMO-listed version aligned.
+- Tagging & pushing:
+
+  ```bash
+  # bump versions in manifest.json and package.json first
+  git commit -am "Release v1.4.1"
+  git tag v1.4.1
+  git push origin main --tags
+  ```
+
+- Helper script:
+
+  ```bash
+  # example: release version 1.4.1
+  pnpm run release -- 1.4.1
+  # this updates manifest.json and package.json, commits, and tags v1.4.1
+  ```
+
 ## Testing
 
 Follow the [Firefox Extension Workshop’s testing instructions](https://extensionworkshop.com/documentation/develop/testing-persistent-and-restart-features/) to test the extension’s persistent and restart features.
