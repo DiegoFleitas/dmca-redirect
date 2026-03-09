@@ -8,7 +8,8 @@
     "lint:fix": "eslint js/*.js --fix",
     "format": "prettier \"**/*.{js,css,html,json,md}\" --check",
     "format:fix": "prettier \"**/*.{js,css,html,json,md}\" --write",
-    "test": "jest"
+    "test": "jest",
+    "package": "mkdir -p dist && zip -r dist/dmca-redirect.zip manifest.json popup.html css js icon.png"
   },
   "repository": {
     "type": "git",
