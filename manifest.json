@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "DMCA Redirect",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Suggests alternative searches when a DMCA notice is detected",
   "permissions": [
     "webRequest",
@@ -15,7 +15,9 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["js/background.js"],
+    "scripts": [
+      "js/background.js"
+    ],
     "type": "module"
   }
 }
