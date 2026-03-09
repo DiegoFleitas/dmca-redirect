@@ -4,6 +4,10 @@
   "description": "Redirects Google DMCA-blocked searches to Yandex.",
   "main": "background.js",
   "scripts": {
+    "lint": "eslint js/*.js",
+    "lint:fix": "eslint js/*.js --fix",
+    "format": "prettier \"**/*.{js,css,html,json,md}\" --check",
+    "format:fix": "prettier \"**/*.{js,css,html,json,md}\" --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,8 +16,16 @@
   },
   "author": "Diego",
   "license": "GPL-3.0",
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0"
+  },
   "bugs": {
     "url": "https://github.com/DiegoFleitas/dmca-redirect/issues"
   },
-  "homepage": "https://github.com/DiegoFleitas/dmca-redirect#readme"
+  "homepage": "https://github.com/DiegoFleitas/dmca-redirect#readme",
+  "devDependencies": {
+    "eslint": "^9.39.4",
+    "prettier": "^3.8.1"
+  }
 }
