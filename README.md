@@ -49,12 +49,26 @@ This extension is your buddy when Google searches hit a DMCA notice. It quickly 
 
 - Firefox Browser.
 - Basic knowledge of HTML, CSS, and JavaScript.
+ - Recent Node.js and **pnpm** (preferred package manager for this project).
 
 ### Structure
 
 - `popup.html` and `popup.css`: Define the popup UI and styling.
 - `background.js`: Contains the main logic for detecting DMCA notices and saving the search query.
 - `popup.js`: Handles user interaction in the popup.
+
+### Local setup & scripts
+
+From the project root:
+
+```bash
+pnpm install
+pnpm run lint
+pnpm test
+pnpm run package
+```
+
+This installs dependencies and runs the same scripts used in CI with pnpm.
 
 ### Building
 
