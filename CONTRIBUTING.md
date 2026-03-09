@@ -8,19 +8,19 @@ This project is a small browser extension, but we still try to follow common ind
 
 - **Prerequisites**
   - Firefox browser (for loading and testing the extension).
-  - Recent Node.js and npm (for tooling, linting, and tests once configured).
+  - Recent Node.js and **pnpm** (for tooling, linting, and tests once configured).
   - Basic knowledge of HTML, CSS, and JavaScript.
 
 - **Setup**
   1. Fork and clone the repository.
   2. Create a feature branch from `main`.
-  3. Install dependencies (if any are defined in `package.json`).
+  3. Install dependencies with `pnpm install` (if any are defined in `package.json`).
 
 ## Development Workflow
 
 1. Make your changes in small, focused commits.
-2. Run formatting and linting tools if configured (e.g. `npm run lint`, `npm run format`).
-3. Run tests (e.g. `npm test`) once a test suite is in place.
+2. Run formatting and linting tools if configured (e.g. `pnpm run lint`, `pnpm run format`).
+3. Run tests (e.g. `pnpm test`) once a test suite is in place.
 4. Manually test the extension in Firefox:
    - Go to `about:debugging`.
    - Choose **This Firefox** → **Load Temporary Add-on**.
