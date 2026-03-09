@@ -1,9 +1,9 @@
 export const getOffendingDomains = async (lumenUrl) => {
-  let response = await fetch(lumenUrl);
-  let text = await response.text();
-  let parser = new DOMParser();
-  let doc = parser.parseFromString(text, "text/html");
-  let infringingUrls = Array.from(doc.querySelectorAll(".infringing_url")).map(
+  const response = await fetch(lumenUrl);
+  const text = await response.text();
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(text, "text/html");
+  const infringingUrls = Array.from(doc.querySelectorAll(".infringing_url")).map(
     (elem) => elem.outerText.match(/([^\s]+)/)[0]
   );
   return infringingUrls;
@@ -33,6 +33,6 @@ export const getLumenUrls = (tabId) => {
 };
 
 export const extractQuery = (url) => {
-  let match = url.match(/[?&]q=([^&]*)/);
+  const match = url.match(/[?&]q=([^&]*)/);
   return match ? decodeURIComponent(match[1]) : null;
 };
