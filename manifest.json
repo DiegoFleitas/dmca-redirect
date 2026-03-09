@@ -3,7 +3,13 @@
   "name": "DMCA Redirect",
   "version": "1.4.0",
   "description": "Suggests alternative searches when a DMCA notice is detected",
-  "permissions": ["webRequest", "storage", "<all_urls>"],
+  "permissions": [
+    "webRequest",
+    "storage",
+    "https://www.google.com/search?*",
+    "https://*.lumendatabase.org/*",
+    "https://yandex.com/search/*"
+  ],
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
