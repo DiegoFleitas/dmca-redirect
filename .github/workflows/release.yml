@@ -38,6 +38,6 @@ jobs:
         run: pnpm run package
 
       - name: Create GitHub release with asset
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: dist/dmca-redirect.zip
