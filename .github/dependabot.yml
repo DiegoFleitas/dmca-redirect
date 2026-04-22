@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: "pnpm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 1
+    target-branch: "main"
+    groups:
+      all-deps:
+        patterns:
+          - "*"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 1
+    target-branch: "main"
