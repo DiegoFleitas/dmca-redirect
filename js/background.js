@@ -20,14 +20,16 @@ chrome.webRequest.onCompleted.addListener(
 
         // Check the result of the script injection
         if (results[0]) {
-          console.log("DMCA notice found, redirecting to Yandex");
-          // Extract the Lumen Database URL and original query
+          console.log("DMCA notice found, checking Lumen Database");
+          // Extract the original query first: it must not be able to abort
+          // the handler, and it is needed even if the Lumen fetch fails.
+          const originalQuery = extractQuery(details.url);
           try {
             const lumenUrls = await getLumenUrls(details.tabId);
             const allOffendingDomains = [];
             for (const lumenUrl of lumenUrls) {
               if (processedLumenUrls.has(lumenUrl)) {
-                console.log("Already processed:", lumenUrl);
+                console.log("Already processed, skipping.");
                 continue; // Skip this URL if it's already been processed
               }
               const offendingDomains = await getOffendingDomains(lumenUrl);
@@ -44,7 +46,12 @@ chrome.webRequest.onCompleted.addListener(
                     console.error(chrome.runtime.lastError);
                     return;
                   }
-                  console.log("Offending domains saved:", allOffendingDomains);
+                  // Log only the count: the domains are the user's browsing
+                  // history and do not belong in the console log.
+                  console.log(
+                    "Offending domains saved:",
+                    allOffendingDomains.length
+                  );
                 }
               );
             }
@@ -55,13 +62,13 @@ chrome.webRequest.onCompleted.addListener(
             );
           }
 
-          const originalQuery = extractQuery(details.url);
           chrome.storage.local.set({ originalQuery: originalQuery }, () => {
             if (chrome.runtime.lastError) {
               console.error(chrome.runtime.lastError);
               return;
             }
-            console.log("Query saved:", originalQuery);
+            // Log a boolean, never the search query itself.
+            console.log("Query saved:", originalQuery !== null);
           });
           // Set badge text and background color
           chrome.browserAction.setBadgeText({

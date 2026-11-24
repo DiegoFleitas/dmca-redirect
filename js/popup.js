@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         link.href = yandexUrl;
         link.textContent = domain;
         link.target = "_blank"; // Open link in a new tab
+        link.rel = "noopener noreferrer";
         li.appendChild(link);
         linksUl.appendChild(li); // Append the list item to the unordered list
       });
