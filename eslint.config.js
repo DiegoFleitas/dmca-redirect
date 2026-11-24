@@ -12,7 +12,8 @@ module.exports = [
         DOMParser: "readonly",
         console: "readonly",
         Set: "readonly",
-        fetch: "readonly"
+        fetch: "readonly",
+        URL: "readonly"
       }
     },
     linterOptions: {
@@ -23,7 +24,10 @@ module.exports = [
       "no-undef": "error",
       eqeqeq: ["error", "always"],
       "no-var": "error",
-      "prefer-const": "warn"
+      "prefer-const": "warn",
+      "no-eval": "error",
+      "no-implied-eval": "error",
+      "no-new-func": "error"
     }
   }
 ];
